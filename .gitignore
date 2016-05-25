@@ -1,0 +1,6 @@
+*.exe
+
+# Custom for Dabsunter
+*/bin/*
+*/obj/*
+*/bugs/*

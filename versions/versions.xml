@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Versions>
+	<Bootstrap>1.0.1.0</Bootstrap>
+	<Launcher>0.0.2.0</Launcher>
+	<Optifine>
+		<value>1.8-OptiFine_HD_U_B2</value>
+		<value>1.7.10-OptiFine_HD_U_A4</value>
+		<value>1.7.2-OptiFine_HD_U_D3</value>
+	</Optifine>
+</Versions>

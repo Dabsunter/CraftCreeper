@@ -36,7 +36,7 @@ Public Class Config
     Public Shared Sub Load()
         Dim FirstRun As Boolean = True
         Try
-            Dim InternetTest = XDocument.Load("http://files.mc-craftcreeper.url.ph/webtest")
+            Dim InternetTest = XDocument.Load("http://dabsunter.github.io/CraftCreeper/webtest")
             If InternetTest.<IsWebTestSuccess>.@result Then Internet = True Else Internet = False
         Catch
             Internet = False
@@ -48,8 +48,8 @@ Public Class Config
 
             Try
                 If My.Application.Info.Version.ToString <> ConfigFile.<LauncherConfig>.<LastEarn>.Value Then
-                    Tools.Earn("http://files.mc-craftcreeper.url.ph/freedonation.html",
-                               "http://mc-craftcreeper.url.ph/thank/",
+                    Tools.Earn("http://dabsunter.github.io/CraftCreeper/freedonation.html",
+                               "http://dabsunter.github.io/CraftCreeper/thanks.html",
                                "CraftCreeper Launcher has been updated!" & vbNewLine & "If you wish CraftCreeper development does not stop there, click on the link below.")
                 End If
             Catch
@@ -143,7 +143,6 @@ Public Class Config
         Dim NWC As New WebClient
         Dim VersionString As String = NWC.DownloadString("http://optifine.net/downloads")
         Dim VersionArray() As String = Split(VersionString, "<td class='downloadLineFileFirst'>")
-        MsgBox("ok" & vbNewLine & VersionArray(1))
         Dim TableNb As Integer = VersionArray.Count - 2
         For TableId As Integer = 0 To TableNb
             ReDim Preserve OptifineVersions(TableId)
@@ -178,7 +177,7 @@ Public Class Config
             Else
                 SystemArch = "32"
             End If
-        ElseIf Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.CommonProgramFilesX86) & "\Java") And Not UseCustomJavawPath Then
+        ElseIf Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) & "\Java") And Not UseCustomJavawPath Then
             Dim JavaVersion As Integer = 0
             For Each JP As String In Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) & "\Java", "javaw.exe", SearchOption.AllDirectories)
                 Dim FileProperties As FileVersionInfo = FileVersionInfo.GetVersionInfo(JP)

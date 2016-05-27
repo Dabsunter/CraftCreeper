@@ -104,6 +104,7 @@ Partial Class LauncherForm
         Me.TestTextBox.Name = "TestTextBox"
         Me.TestTextBox.Size = New System.Drawing.Size(124, 52)
         Me.TestTextBox.TabIndex = 12
+        Me.TestTextBox.Visible = False
         '
         'TestButton
         '
@@ -113,6 +114,7 @@ Partial Class LauncherForm
         Me.TestButton.TabIndex = 10
         Me.TestButton.Text = "test"
         Me.TestButton.UseVisualStyleBackColor = True
+        Me.TestButton.Visible = False
         '
         'NewsWebBrowser
         '

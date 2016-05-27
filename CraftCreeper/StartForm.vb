@@ -12,13 +12,13 @@ Public Class StartForm
 
     Private Sub StartForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim InternetTest = XDocument.Load("http://files.mc-craftcreeper.url.ph/webtest")
+            Dim InternetTest = XDocument.Load("http://dabsunter.github.io/CraftCreeper/webtest")
             Internet = InternetTest.<IsWebTestSuccess>.@result
         Catch
             Internet = False
         End Try
         If Internet Then
-            Dim Xml = XDocument.Load("http://files.mc-craftcreeper.url.ph/versions/versions.xml")
+            Dim Xml = XDocument.Load("http://dabsunter.github.io/CraftCreeper/versions/versions.xml")
             LastVersion = Xml.<Versions>.<Launcher>.Value
             If File.Exists(GameDir & "\Launcher.exe") Then
                 Dim FileProperties As FileVersionInfo = FileVersionInfo.GetVersionInfo(GameDir & "\Launcher.exe")
@@ -53,7 +53,7 @@ Public Class StartForm
             DownloadForm.InfoLabel.Text = "Downloading..."
             Directory.CreateDirectory(GameDir)
             If File.Exists(GameDir & "\launcher.zip") Then File.Delete(GameDir & "\launcher.zip")
-            NWC.DownloadFileAsync(New Uri("http://files.mc-craftcreeper.url.ph/launcher.zip"), GameDir & "\launcher.zip")
+            NWC.DownloadFileAsync(New Uri("http://dabsunter.github.io/CraftCreeper/launcher.zip"), GameDir & "\launcher.zip")
         Catch
             MsgBox("An error occurred while downloading the file!", MsgBoxStyle.Exclamation, "Error")
             End
